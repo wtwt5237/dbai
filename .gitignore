@@ -1,0 +1,33 @@
+# Laravel specific
+/vendor
+/node_modules
+/public/storage
+/storage/*.key
+.env
+.phpunit.result.cache
+
+# Mac system files
+.DS_Store
+
+# IDE/Editor specific
+/.idea
+.vscode
+
+# Composer and NPM cache
+/composer.phar
+/.composer
+/.npm
+
+# Environment files
+.env.*.backup
+.env.local
+.env.testing
+
+# Log files
+/storage/logs/*
+/storage/framework/cache/data/*
+
+# Temporary files
+*.swp
+*.swo
+
