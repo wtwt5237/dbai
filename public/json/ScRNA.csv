@@ -1,0 +1,1 @@
+"ID_scRNA","ID_Individual","ID_Sample","Direction","Exp_data_mtx_raw","Exp_data_genes_raw","Exp_data_barcodes_raw","Exp_data_mtx_filtered","Exp_data_genes_filtered","Exp_data_barcodes_filtered","TCR_data","BCR_data","FeatureBarcode_data","Other_data","CellRanger","Data_source","Uploader","Date","Species","Citation","Comment"
