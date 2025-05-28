@@ -122,6 +122,7 @@ class UserAuthController extends Controller
     public function updateUser(Request $req, $user_id)
     {
         $permission = [];
+
         foreach (config('global.db_to_display.user') as $db_name) {
             $db_name = strtolower(str_replace(' ', '', $db_name));
             if ($req->$db_name == 'on') {
@@ -132,15 +133,19 @@ class UserAuthController extends Controller
         if (count(config('global.db_to_display.user')) == count($permission)) $permission = 'all';
         if (empty($permission)) $permission = NULL;
 
-        $user = User::find($user_id);
         $user_info = array_filter($req->all());
-//        foreach ($user_info as $k => $v) {
-//            if ($k == '_token' or str_contains($k, 'dbai_')) {
-//                unset($user_info[$k]);
-//            }
-//        }
-        $user_info['permission'] = $permission;
-        $user->update($user_info);
+        $updated = [
+            'role' => $user_info['role'],
+            'username' => $user_info['username'],
+            'email' => $user_info['email'],
+            'permission' => $permission,
+        ];
+        if (!empty($user_info['password'])) {
+            $updated['password'] = Hash::make($user_info['password']);
+        }
+
+        $user = User::find($user_id);
+        $user->update($updated);
 
         return back();
     }
@@ -161,5 +166,4 @@ class UserAuthController extends Controller
         }
         return view('user/user-profile');
     }
-
 }

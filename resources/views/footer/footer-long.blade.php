@@ -29,6 +29,6 @@
             </div>
         </div>
     </div>
-    2023 © <a href="https://qbrc.swmed.edu/labs/wanglab/">Dr. Tao Wang Lab</a> | <a
-        href="{{ asset('license.html') }}">Terms and Conditions</a>
+    2023 © <a href="https://qbrc.swmed.edu/labs/wanglab/">Dr. Tao Wang Lab</a> |
+    <a href="{{ asset('license.txt') }}">Terms and Conditions</a>
 </div>
