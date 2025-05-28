@@ -122,9 +122,9 @@ class DatasetSeeder extends Seeder
                             if (DB::table('dbai_individual')->where($k, $v)->doesntExist()) dd(sprintf($errors[2], $k, $count + 1));
                             if (!preg_match('/^Individual_[A-Za-z0-9].*$/i', $v)) dd(sprintf($errors[4], $k, $count + 1));
                         }
-//                        if ($k == 'Type') {
-//                            if (!preg_match('(Tumor|Metastasis|Adjacent|Blood|Other)', $v)) dd(sprintf($errors[4], $k, $count + 1));
-//                        }
+                        //                        if ($k == 'Type') {
+                        //                            if (!preg_match('(Tumor|Metastasis|Adjacent|Blood|Other)', $v)) dd(sprintf($errors[4], $k, $count + 1));
+                        //                        }
                         if (str_contains($k, 'HLA') and !empty($v)) {
                             if (!str_starts_with($v, $k)) dd(sprintf($errors[4], $k, $count + 1));
                         }

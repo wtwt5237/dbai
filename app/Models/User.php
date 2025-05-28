@@ -12,16 +12,16 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
-    protected $table = 'users';
+    protected $guarded = [];
 
-//    public function servers()
-//    {
-//        return $this->belongsTo(Attribute::class, 'user_name');
-//    }
-//
-//    public function codebooks()
-//    {
-////        dump($this->Attribute);
-//        return $this->Attribute->codebooks()->orderBy('value')->get();
-//    }
+    //    public function servers()
+    //    {
+    //        return $this->belongsTo(Attribute::class, 'user_name');
+    //    }
+    //
+    //    public function codebooks()
+    //    {
+    ////        dump($this->Attribute);
+    //        return $this->Attribute->codebooks()->orderBy('value')->get();
+    //    }
 }
